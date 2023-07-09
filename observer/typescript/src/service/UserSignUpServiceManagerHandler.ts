@@ -1,8 +1,6 @@
-import { Role } from "../entity/Role";
 import { User } from "../entity/User";
 import { UserRegistered } from "../entity/UserRegistered";
 import { UserRepository } from "../entity/UserRepository";
-import { Workspace } from "../entity/Workspace";
 import { WorkspaceRepository } from "../entity/WorkspaceRepository";
 import { Observable } from "./Observable";
 
@@ -26,12 +24,5 @@ export class UserSignUpServiceManagerHandler extends Observable<UserRegistered> 
 
     const userRegistered = new UserRegistered(id, name, emailAddress, password);
     this.notify(userRegistered);
-
-    console.log("3 - Create default workspace");
-    const workspace = Workspace.default();
-    this.workspaceRepository.save(workspace);
-
-    console.log("4 - Assign user to workspace");
-    workspace.assignUser(user.id, Role.admin);
   }
 }
