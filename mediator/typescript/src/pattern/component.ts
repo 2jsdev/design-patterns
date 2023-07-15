@@ -5,7 +5,7 @@ export class Component<T> {
     protected mediator?: Mediator<T>
   ) {}
 
-  public setMediator(mediator: Mediator<T>) {
+  public setMediator(mediator: Mediator<T>): void {
     this.mediator = mediator
   }
 }
