@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node ./src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "graph": "arkit -f /index.ts -o graph.svg"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "arkit": "^1.6.4",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
   }
